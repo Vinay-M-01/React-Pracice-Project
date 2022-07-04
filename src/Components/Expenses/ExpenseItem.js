@@ -32,12 +32,14 @@ import './ExpenseItem.css';
 const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title)
 
+//Adding event listener for changing the title
   const clickHandler = () => {
     setTitle('Updated the value');
     console.log('Clicked!!');
   }
   const [amount, setTitle1] = useState(props.amount)
 
+//Adding event listner to update the amount to $100 
   const changeHandler = () => {
     setTitle1('100')
     console.log('Expense Changed!!');
