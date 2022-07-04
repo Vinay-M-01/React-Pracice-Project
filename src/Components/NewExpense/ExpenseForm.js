@@ -4,13 +4,10 @@ import './ExpenseForm.css'
 
 const ExpenseForm =() => {  
 
-    // eslint-disable-next-line
     const [enteredTitle, setEnteredTitle] = useState('');
-    // eslint-disable-next-line
     const [enteredAmount, setEnteredAmount] = useState('');
-    // eslint-disable-next-line
     const [enteredDate, setEnteredDate] = useState('');
-    
+
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);
     };
@@ -23,8 +20,20 @@ const ExpenseForm =() => {
         setEnteredDate(event.target.value);
     };
 
+    const submitHandler = (event) => {
+        event.preventDefault();
+
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        }
+
+        console.log(expenseData);
+    }
+
     return (
-    <form>
+    <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
             <div className="new-expense__control">
                 <label>Title</label>
