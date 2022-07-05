@@ -35,7 +35,7 @@ const ExpenseItem = (props) => {
 //Adding event listener for changing the title
   const clickHandler = () => {
     setTitle('Updated the value');
-    console.log('Clicked!!');
+    console.log('Title Changed!!');
   }
   const [amount, setTitle1] = useState(props.amount)
 
